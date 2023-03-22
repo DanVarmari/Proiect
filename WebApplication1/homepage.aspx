@@ -40,7 +40,7 @@
                     <center>
                         <img width="150px" <img src="images/delete.png" />
                         <h4>Sterge anuntul</h4>
-                        <p>Sterge un anunt care l-ai postat cu masina ta</p>
+                        <p>Sterge un anunt care l-ai postat</p>
                     </center>
                 </div>
             </div>
