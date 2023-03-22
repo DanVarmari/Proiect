@@ -32,7 +32,7 @@
                     <center>
                         <img width="150px" <img src="images/plus.png" />
                         <h4>Adaugare</h4>
-                        <p>Adauga anuntul cu masina ta pentru vanzare</p>
+                        <p>Adauga anuntul pentru vanzare</p>
                     </center>
                 </div>
             
