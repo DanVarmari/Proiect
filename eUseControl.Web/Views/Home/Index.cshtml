@@ -1,0 +1,281 @@
+﻿@using WebMatrix.Data
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "UserPage";
+
+    var db = Database.Open("eUseControl");
+    var selectProductString = "SELECT * FROM DbProducts ORDER BY Prod_Id";
+}
+
+
+@model eUseControl.Models.UserData
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+    <title>One Health - Medical Center HTML5 Template</title>
+
+    <link rel="stylesheet" href="../assets/css/maicons.css">
+
+    <link rel="stylesheet" href="../assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
+
+    <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
+
+    <link rel="stylesheet" href="../assets/css/theme.css">
+</head>
+<body>
+
+    <!-- Back to top button -->
+    <div class="back-to-top" id="home"></div>
+
+
+    <div class="page-hero bg-image overlay-dark" style="background-image: url(../assets/img/backgroundlam.jpg);">
+        <div class="hero-section">
+            <div class="container text-center wow zoomIn">
+                <span class="subhead">Let's make your life more interest!</span>
+                <h1 class="display-4">Sport Living</h1>
+                <a href="@Url.Action("Index","Products")" class="btn btn-primary">Choose A Car</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-light">
+        <div class="page-section py-3 mt-md-n5 custom-index">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp">
+                            <div class="circle-shape bg-secondary text-white">
+                                <span class="mai-chatbubbles-outline"></span>
+                            </div>
+                            <p><span>Chat</span> with our customers</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp">
+                            <div class="circle-shape bg-primary text-white">
+                                <span class="mai-shield-checkmark"></span>
+                            </div>
+                            <p><span>Car</span>Protection</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 py-3 py-md-0">
+                        <div class="card-service wow fadeInUp">
+                            <div class="circle-shape bg-accent text-white">
+                                <span class="mai-basket"></span>
+                            </div>
+                            <p><span>Car</span>-Sale Market</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .page-section -->
+
+        <div class="page-section pb-0" id="about">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 py-3 wow fadeInUp">
+                        <h1>Welcome to Your Dream Car <br> Market</h1>
+                        <p class="text-grey mb-4">Welcome to our premier car sale website, where your automotive dreams become a thrilling reality. Whether you're in search of a sleek sedan, a powerful SUV, or a nimble sports car, we have an extensive collection of vehicles that will ignite your passion for driving.</p>
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+                        <div class="img-place custom-img-1">
+                            <img src="../assets/img/Porsche.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- .bg-light -->
+    </div> <!-- .bg-light -->
+
+    <div class="page-section" id="products">
+        <div class="container">
+            <h1 class="text-center mb-5 wow fadeInUp">Our Products</h1>
+            <div class="owl-carousel wow fadeInUp" id="doctorSlideshow">
+                @foreach (var row in db.Query(selectProductString))
+                {
+                    <div class="item">
+                        <div class="card-doctor">
+                            <div class="header">
+                                <img src="../assets/img/doctors/productcar.jpg" alt="">
+                                <div class="meta">
+                                    <a href="#"><span class="mai-call"></span></a>
+                                    <a href="#"><span class="mai-logo-whatsapp"></span></a>
+                                </div>
+                            </div>
+                            <div class="body">
+                                <p class="text-xl mb-0">@row.Prod_Name</p>
+                                <span class="text-sm text-grey">@row.Prod_Desc</span>
+                                <p class="text-sm text-grey text-right">Price: @row.Prod_Price $</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section bg-light" id="news">
+        <div class="container">
+            <h1 class="text-center wow fadeInUp">Latest Car News</h1>
+            <div class="row mt-5">
+                <div class="col-lg-4 py-2 wow zoomIn">
+                    <div class="card-blog">
+                        <div class="header">
+                            <div class="post-category">
+                                <a href="#">Mercedes</a>
+                            </div>
+                            <a href="https://www.mercedes-benz.com/en/" class="post-thumb">
+                                <img src="../assets/img/blog/mercedescenter.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="body">
+                            <h5 class="post-title"><a href="https://www.mercedes-benz.com/en/">News About Mercedes Company</a></h5>
+                            <div class="site-info">
+                                <div class="avatar mr-2">
+                                    <div class="avatar-img">
+                                        <img src="../assets/img/person/mercedeslogo.jpg" alt="">
+                                    </div>
+                                    <span>Mercedes CEO</span>
+                                </div>
+                                <span class="mai-time"></span> 1 week ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-2 wow zoomIn">
+                    <div class="card-blog">
+                        <div class="header">
+                            <div class="post-category">
+                                <a href="#">BMW</a>
+                            </div>
+                            <a href="https://www.bmw.com/en/index.html" class="post-thumb">
+                                <img src="../assets/img/blog/bmwcenter.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="body">
+                            <h5 class="post-title"><a href="https://www.bmw.com/en/index.html">Very productive Weeks from BMW</a></h5>
+                            <div class="site-info">
+                                <div class="avatar mr-2">
+                                    <div class="avatar-img">
+                                        <img src="../assets/img/person/bmwlogo.jpg" alt="">
+                                    </div>
+                                    <span>BMW CEO</span>
+                                </div>
+                                <span class="mai-time"></span> 4 weeks ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-2 wow zoomIn">
+                    <div class="card-blog">
+                        <div class="header">
+                            <div class="post-category">
+                                <a href="#">Audi</a>
+                            </div>
+                            <a href="https://www.audi.com/en.html" class="post-thumb">
+                                <img src="../assets/img/blog/audicenter.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="body">
+                            <h5 class="post-title"><a href="https://www.audi.com/en.html">Audi is getting podiums</a></h5>
+                            <div class="site-info">
+                                <div class="avatar mr-2">
+                                    <div class="avatar-img">
+                                        <img src="../assets/img/person/audilogo.jpg" alt="">
+                                    </div>
+                                    <span>Audi CEO</span>
+                                </div>
+                                <span class="mai-time"></span> 2 months ago
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center mt-4 wow zoomIn">
+                    <a href="blog.html" class="btn btn-primary">Read More</a>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- .page-section -->
+
+    <div class="page-section" id="contact">
+        <div class="container">
+            <h1 class="text-center wow fadeInUp">Contact Us</h1>
+
+            <form class="main-form">
+                <div class="row mt-5 ">
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                        <input type="text" class="form-control" placeholder="Full name">
+                    </div>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                        <input type="text" class="form-control" placeholder="Email address..">
+                    </div>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft" data-wow-delay="300ms">
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight" data-wow-delay="300ms">
+                        <select name="departement" id="departement" class="custom-select">
+                            <option value="general">Sedan</option>
+                            <option value="cardiology">SUV</option>
+                            <option value="dental">Wagon</option>
+                            <option value="neurology">Trucks</option>
+                            <option value="orthopaedics">Limousine</option>
+                        </select>
+                    </div>
+                    <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                        <input type="text" class="form-control" placeholder="Number..">
+                    </div>
+                    <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
+                        <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-3 wow zoomIn">Submit Request</button>
+            </form>
+        </div>
+    </div> <!-- .page-section -->
+
+    <div class="page-section banner-home bg-image" style="background-image: );">
+        <div class="container py-5 py-lg-0">
+            <div class="row align-items-center">
+                <div class="col-lg-4 wow zoomIn">
+                    <div class="img-banner d-none d-lg-block">
+                        
+                    </div>
+                </div>
+                <div class="col-lg-8 wow fadeInRight">
+                    <h1 class="font-weight-normal mb-3">Get easy access of all features using Car Sale APP</h1>
+                    <a href="#"><img src="../assets/img/google_play.svg" alt=""></a>
+                    <a href="#" class="ml-2"><img src="../assets/img/app_store.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .banner-home -->
+
+
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
+
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <script src="../assets/vendor/wow/wow.min.js"></script>
+
+    <script src="../assets/js/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+﻿
+@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+     <title>New SUV Cars</title>
+     <style>
+          /* Add your custom CSS styles here */
+          .container {
+               max-width: 1200px;
+               margin: 0 auto;
+               padding: 20px;
+          }
+
+          .car-list {
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+               grid-gap: 20px;
+          }
+
+          .car {
+               background-color: #f4f4f4;
+               padding: 20px;
+               border-radius: 5px;
+          }
+
+               .car img {
+                    max-width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+               }
+
+               .car h2 {
+                    margin-top: 0;
+               }
+
+               .car p {
+                    margin-bottom: 0;
+               }
+     </style>
+</head>
+<body>
+     <div class="container">
+          <h1>New SUV Cars</h1>
+          <div class="car-list">
+               <div class="car">
+                    <img src="~/assets/img/rav4.jpg" alt="Toyota RAV4">
+                    <h2>Toyota RAV4</h2>
+                    <p>Toyota RAV4 is a popular and highly regarded compact SUV that has captured the hearts of drivers worldwide.</p>
+               </div>
+               <div class="car">
+                    <img src="~/assets/img/crv.jpg" alt="Honda CR-V">
+                    <h2>Honda CR-V</h2>
+                    <p>The Honda CR-V is a well-regarded compact SUV that has garnered a strong reputation for its reliability, practicality, and comfort.</p>
+               </div>
+               <div class="car">
+                    <img src="~/assets/img/ford.jpg" alt="Ford Escape">
+                    <h2>Ford Escape</h2>
+                    <p>The Ford Escape is a popular compact SUV that combines versatility, efficiency, and modern features.</p>
+               </div>
+               <!-- Add more cars as needed -->
+          </div>
+     </div>
+</body>
+</html>
+

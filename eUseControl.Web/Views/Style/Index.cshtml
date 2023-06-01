@@ -1,0 +1,67 @@
+﻿
+@{
+     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+     <title>New Wagon Cars</title>
+     <style>
+          /* Add your custom CSS styles here */
+          .container {
+               max-width: 1200px;
+               margin: 0 auto;
+               padding: 20px;
+          }
+
+          .car-list {
+               display: grid;
+               grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+               grid-gap: 20px;
+          }
+
+          .car {
+               background-color: #f4f4f4;
+               padding: 20px;
+               border-radius: 5px;
+          }
+
+               .car img {
+                    max-width: 100%;
+                    height: auto;
+                    margin-bottom: 10px;
+               }
+
+               .car h2 {
+                    margin-top: 0;
+               }
+
+               .car p {
+                    margin-bottom: 0;
+               }
+     </style>
+</head>
+<body>
+     <div class="container">
+          <h1>New Wagon Cars</h1>
+          <div class="car-list">
+               <div class="car">
+                    <img src="~/assets/img/outback.jpg" alt="Subaru Outback">
+                    <h2>Subaru Outback</h2>
+                    <p>The Subaru Outback is a rugged and versatile crossover SUV that has become an icon for outdoor enthusiasts and adventure seekers.</p>
+               </div>
+               <div class="car">
+                    <img src="~/assets/img/wagon.jpg" alt="Volkswagen Golf Wagon">
+                    <h2>Volkswagen Golf Wagon</h2>
+                    <p>The Volkswagen Golf Wagon, also known as the Volkswagen Golf SportWagen in some markets, is a versatile and practical vehicle that combines the iconic design and driving dynamics of the Volkswagen Golf with the added cargo space of a wagon.</p>
+               </div>
+               <div class="car">
+                    <img src="~/assets/img/xc60.jpg" alt="Volvo V60">
+                    <h2>Volvo V60</h2>
+                    <p>The Volvo V60 is a sleek and elegant luxury wagon that exemplifies Volvo's commitment to safety, Scandinavian design, and innovative technology.</p>
+               </div>
+               <!-- Add more cars as needed -->
+          </div>
+     </div>
+</body>
+</html>
